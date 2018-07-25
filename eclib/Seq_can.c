@@ -26,10 +26,10 @@ static int Loop(T seq, int value);
  */
 void Seq_init(T seq)
 {
-	seq->capacity = CAPACITY;
-	seq->size = 0;
-	seq->front = 1;
-	seq->rear = 0;
+  seq->capacity = CAPACITY;
+  seq->size = 0;
+  seq->front = 1;
+  seq->rear = 0;
 }
 
 /**
@@ -43,9 +43,9 @@ void Seq_init(T seq)
  */
 void Seq_push(T seq, Elem_T value)
 {
-		seq->size++;
-		seq->rear = Loop(seq, seq->rear);
-        seq->data[seq->rear] = value;
+  seq->size++;
+  seq->rear = Loop(seq, seq->rear);
+  seq->data[seq->rear] = value;
 }
 
 /**
@@ -60,10 +60,10 @@ void Seq_push(T seq, Elem_T value)
  */
 Elem_T Seq_pop(T seq)
 {
-		seq->size--;
-		int tmp = seq->front;
-		seq->front = Loop(seq, seq->front);
-		return seq->data[tmp];
+  seq->size--;
+  int tmp = seq->front;
+  seq->front = Loop(seq, seq->front);
+  return seq->data[tmp];
 }
 
 
@@ -78,7 +78,7 @@ Elem_T Seq_pop(T seq)
  */
 int Seq_isEmpty(T seq)
 {
-	return seq->size == 0;
+  return seq->size == 0;
 }
 
 /**
@@ -92,7 +92,7 @@ int Seq_isEmpty(T seq)
  */
 int Seq_noEmpty(T seq)
 {
-	return seq->size > 0;
+  return seq->size > 0;
 }
 
 /**
@@ -106,7 +106,7 @@ int Seq_noEmpty(T seq)
  */
 int Seq_isFull(T seq)
 {
-	return seq->size == seq->capacity;
+  return seq->size == seq->capacity;
 }
 
 /**
@@ -119,12 +119,12 @@ int Seq_isFull(T seq)
  */
 static int Loop(T seq, int value)
 {
-	if(++value == seq->capacity)
-	{
-		value = 0;
-	}
+  if(++value == seq->capacity)
+  {
+    value = 0;
+  }
 
-	return value;
+  return value;
 }
 
 

@@ -34,11 +34,11 @@
 
 struct Seq_T
 {
-	int capacity;
-	int size;
-	int front;
-	int rear;
-	Elem_T data[CAPACITY];
+  int capacity;
+  int size;
+  int front;
+  int rear;
+  Elem_T data[CAPACITY];
 };
 typedef struct Seq_T* T;
 
